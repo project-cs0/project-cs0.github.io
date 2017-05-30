@@ -1,0 +1,47 @@
+# Outline
+
+- Table of contents
+- Introduction
+    - Motivation
+    - How to use this book
+- Programming without code
+    - What is programming?
+    - What is a programming language?
+    - How to give instructions to a computer
+        - Compare giving instructions to your friend vs. to a robot
+    - Variables
+        - Need for storing commonly used information
+    - Conditionals
+        - If/else if/else
+    - Loops
+        - While loops
+        - For loops
+    - Functions
+        - Reusable patterns, with inputs
+    - Lab: Teaching a robot how to make PB&J
+        - Better example? Allowed to reuse this?
+- Programming for the web, part 1
+    - Setting up your environment
+    - What is JavaScript?
+    - Variable types, including arrays and objects
+    - Control flow review
+    - Functions
+    - Lab: "Hello, world" and beyond
+- Programming for the web, part 2
+    - Setting up your environment
+    - What are HTML and CSS?
+    - Including CSS/JavaScript in HTML
+    - Lab: Building a website
+- Deep dive into JavaScript
+    - Functions, revisited
+        - First-class functions (functions stored in variables)
+    - Interacting with the DOM
+    - Lab: Hack this game
+        - Simple game (Snake?) that they can hack
+- Visual programming with Processing
+    - What is Processing?
+    - Setting up your environment
+- Object-oriented design
+- Sorting
+- Recursion
+- Glossary

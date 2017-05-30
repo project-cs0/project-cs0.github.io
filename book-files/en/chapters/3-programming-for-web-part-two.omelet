@@ -1,0 +1,10 @@
+>extend ../templates/chapter.omelet
+
++chapter-title =
+    Programming for the web, part two
+
++chapter-body =
+    @p
+        This is paragraph 1.
+    @p
+        This is paragraph 2.

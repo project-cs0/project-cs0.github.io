@@ -1,0 +1,8 @@
+>extend base.omelet
+
++page-title =
+    Chapter: {~chapter-title}
+
++page-body =
+    @h1 {~chapter-title}
+    {~chapter-body}

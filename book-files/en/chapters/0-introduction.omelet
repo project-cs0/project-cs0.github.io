@@ -1,0 +1,47 @@
+>extend ../templates/chapter.omelet
+
++chapter-title =
+    Introduction
+
++chapter-body =
+    @h2
+        What am I reading?
+    @p
+        This is a free, online textbook designed to teach computer science from
+        the ground up. It starts at the very beginning, meaning it assumes that the
+        reader has no prior experience with computer science or with programming.
+    @p
+        The creators of this book want to make these concepts accessible to
+        {@i everyone}. Whether or not they realize it, most people in today's
+        world interact with things that have been programmed by someone else on
+        a daily basis. You probably do, too. Maybe you use a computer to access
+        the internet. Maybe you send text messages from a smartphone. Maybe you
+        wear a digital watch or a hearing aid. All of these things, and many more,
+        were designed and programmed by people just like you. And all of those
+        programmers started in the same place we assume you are now: with no
+        knowledge of computer science. Nobody is born knowing these things. They are
+        always learned. This book hopes to help you start that learning.
+    @h2
+        Why am I reading it?
+    @p
+        Good question... There are lots of reasons you might be reading this book.
+        Perhaps it's required reading for a school class. Maybe you're using it
+        to study for an exam. Or maybe you just stumbled across it on the internet
+        and are hoping it might help you teach yourself how to program. All of these
+        are completely valid reasons, and there are countless others that are
+        equally valid. Whatever your reason, we hope that you will find this book
+        helpful in your journey.
+    @h2
+        How should I read this book?
+    @p
+        This is another question that is difficult for us, the creators of this
+        book, to answer. There could be a million different people reading this
+        book for a million different reasons, and each could have their own learning
+        style. Some might read every word, in order, from beginning to end. Others
+        might skim the section headings and read the ones that sound the most
+        interesting. Some might only do the labs, or just glance at the glossary
+        occasionally for reference. We want this book to be flexible and to work
+        for as many people as possible. It should not matter if you're reading this
+        on a computer at your local library, printed on paper and lit by candlelight,
+        or on a smartphone while using the bathroom. Just as there is no single
+        type of programmer, there is no single way to learn to program.

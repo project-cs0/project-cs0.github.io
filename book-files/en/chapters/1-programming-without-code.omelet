@@ -1,0 +1,10 @@
+>extend ../templates/chapter.omelet
+
++chapter-title =
+    Programming without code
+
++chapter-body =
+    @p
+        This is paragraph 1.
+    @p
+        This is paragraph 2.
