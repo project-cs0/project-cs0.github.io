@@ -1,4 +1,4 @@
->extend ../templates/chapter.omelet
+>extend ../templates/chapter
 
 +chapter-title =
     Programming for the web, part two

@@ -1,4 +1,4 @@
->extend base.omelet
+>extend base
 
 +page-title =
     Chapter: {~chapter-title}

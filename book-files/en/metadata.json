@@ -1,0 +1,35 @@
+{
+    "language": "en",
+    "bookTitle": "Textbook",
+    "tableOfContents": {
+        "inFile": "book-files/en/table-of-contents.omelet",
+        "outFile": "en/index.html"
+    },
+    "chapters": [
+        {
+            "title": "Introduction",
+            "inFile": "book-files/en/chapters/0-introduction.omelet",
+            "outFile": "en/chapters/0-introduction/index.html"
+        },
+        {
+            "title": "Programming without code",
+            "inFile": "book-files/en/chapters/1-programming-without-code.omelet",
+            "outFile": "en/chapters/1-programming-without-code/index.html"
+        },
+        {
+            "title": "Programming for the web, part one",
+            "inFile": "book-files/en/chapters/2-programming-for-web-part-one.omelet",
+            "outFile": "en/chapters/2-programming-for-web-part-one/index.html"
+        },
+        {
+            "title": "Programming for the web, part two",
+            "inFile": "book-files/en/chapters/3-programming-for-web-part-two.omelet",
+            "outFile": "en/chapters/3-programming-for-web-part-two/index.html"
+        },
+        {
+            "title": "Deep dive into JavaScript",
+            "inFile": "book-files/en/chapters/4-deep-dive-into-javascript.omelet",
+            "outFile": "en/chapters/4-deep-dive-into-javascript/index.html"
+        }
+    ]
+}

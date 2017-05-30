@@ -1,6 +1,6 @@
 @doctype html
-@html
+@html[lang={metadata.language}]
     @head
-        @title Textbook | {page-title}
+        @title {metadata.bookTitle} | {page-title}
     @body
         {~page-body}

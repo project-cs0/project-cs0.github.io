@@ -3,6 +3,10 @@ const fs = require('fs')
 const path = require('path')
 var _0777 = parseInt('0777', 8);
 
+const getMetadata = (lang) => {
+    return require(`./book-files/${lang}/metadata.json`)
+}
+
 // 101111
 
 function mkdirpSync (p, opts, made) {
@@ -52,31 +56,16 @@ function mkdirpSync (p, opts, made) {
 
 const omeletOptions = {}
 
-const chapters = [
-    {
-        inFile: "book-files/en/chapters/0-introduction.omelet",
-        outFile: "public/en/chapters/0-introduction/index.html",
-    },
-    {
-        inFile: "book-files/en/chapters/1-programming-without-code.omelet",
-        outFile: "public/en/chapters/1-programming-without-code/index.html",
-    },
-    {
-        inFile: "book-files/en/chapters/2-programming-for-web-part-one.omelet",
-        outFile: "public/en/chapters/2-programming-for-web-part-one/index.html",
-    },
-    {
-        inFile: "book-files/en/chapters/3-programming-for-web-part-two.omelet",
-        outFile: "public/en/chapters/3-programming-for-web-part-two/index.html",
-    },
-    {
-        inFile: "book-files/en/chapters/4-deep-dive-into-javascript.omelet",
-        outFile: "public/en/chapters/4-deep-dive-into-javascript/index.html",
-    },
-]
+const metadata = getMetadata('en')
 
-for (let chapter of chapters) {
-    const renderedChapter = omelet.renderFile(chapter.inFile, omeletOptions)
-    mkdirpSync(path.dirname(chapter.outFile))
-    fs.writeFileSync(chapter.outFile, renderedChapter, 'UTF-8')
+const toRender = metadata.chapters.concat([metadata.tableOfContents])
+
+for (let item of toRender) {
+    const rendered = omelet.renderFile(
+        item.inFile,
+        {"metadata": metadata},
+        omeletOptions)
+        
+    mkdirpSync(path.dirname(item.outFile))
+    fs.writeFileSync(item.outFile, rendered, 'UTF-8')
 }
