@@ -6,3 +6,4 @@
 +page-body =
     @h1 {~chapter-title}
     {~chapter-body}
+    {~chapter-body}

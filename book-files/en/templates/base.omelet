@@ -2,5 +2,14 @@
 @html[lang={metadata.language}]
     @head
         @title {metadata.bookTitle} | {page-title}
+        @link[rel=stylesheet href={rootPath | append "/assets/css/default.css"}]
     @body
-        {~page-body}
+        @header
+            @button.menu menu
+
+        @nav
+            @ul
+                >for chapter in metadata.chapters
+                    @li|a[href=#] {chapter.title}
+        @main
+            {~page-body}

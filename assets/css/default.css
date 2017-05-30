@@ -1,0 +1,44 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background: #222;
+    color: #eee;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+p {
+    font-family: 'Georgia', 'Times', serif;
+    line-height: 1.6em;
+    font-size: 1.2em;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #222;
+}
+
+nav {
+    width: 400px;
+    position: fixed;
+    text-align: right;
+    top: 100px;
+    left: 50%;
+    margin-left: -600px;
+}
+
+nav li {
+    list-style-type: none;
+}
