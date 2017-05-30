@@ -1,9 +1,0 @@
->extend templates/base
-
-+page-title =
-    Table of contents
-
-+page-body =
-    @ol
-        >for chapter in metadata.chapters
-            @li {chapter.title}

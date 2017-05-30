@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{metadata.language}}">
+    <head>
+        <title>{{metadata.bookTitle}} | {% block pageTitle %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{rootPath}}/assets/css/default.css" />
+    </head>
+    <body>
+        <header>
+            <button class="menu">menu</button>
+        </header>
+        <nav>
+            <!-- for chapter in chapters... -->
+        </nav>
+        <main>
+            {% block pageBody %}{% endblock %}
+        </main>
+    </body>
+</html>

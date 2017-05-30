@@ -1,7 +1,7 @@
-const omelet = require('C:/Users/reidm/Code/omelet/omelet/lib/omelet.js')
 const nunjucks = require('nunjucks')
 const fs = require('fs')
 const path = require('path')
+const mkdirp = require('mkdirp')
 
 const currentDirectory = require('process').cwd() || ''
 
@@ -16,11 +16,11 @@ const metadata = getMetadata('en')
 const toRender = metadata.chapters.concat([metadata.tableOfContents])
 
 for (let item of toRender) {
-    const rendered = omelet.renderFile(
-        item.inFile,
-        { "metadata": metadata, "rootPath": currentDirectory },
-        omeletOptions)
+    const rendered = nunjucks.render(item.inFile, {
+        "metadata": metadata,
+        "rootPath": currentDirectory,
+    })
 
-    mkdirpSync(path.dirname(item.outFile))
+    mkdirp.sync(path.dirname(item.outFile))
     fs.writeFileSync(item.outFile, rendered, 'UTF-8')
 }

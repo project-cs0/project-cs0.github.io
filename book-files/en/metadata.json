@@ -2,34 +2,34 @@
     "language": "en",
     "bookTitle": "Textbook",
     "tableOfContents": {
-        "inFile": "book-files/en/table-of-contents.omelet",
+        "inFile": "book-files/en/table-of-contents.njk",
         "outFile": "en/index.html"
     },
     "chapters": [
         {
             "title": "Introduction",
-            "inFile": "book-files/en/chapters/0-introduction.omelet",
-            "outFile": "en/chapters/0-introduction/index.html"
+            "inFile": "book-files/en/chapters/0-introduction.njk",
+            "outFile": "en/chapters/0-introduction.html"
         },
         {
             "title": "Programming without code",
-            "inFile": "book-files/en/chapters/1-programming-without-code.omelet",
-            "outFile": "en/chapters/1-programming-without-code/index.html"
+            "inFile": "book-files/en/chapters/1-programming-without-code.njk",
+            "outFile": "en/chapters/1-programming-without-code.html"
         },
         {
             "title": "Programming for the web, part one",
-            "inFile": "book-files/en/chapters/2-programming-for-web-part-one.omelet",
-            "outFile": "en/chapters/2-programming-for-web-part-one/index.html"
+            "inFile": "book-files/en/chapters/2-programming-for-web-part-one.njk",
+            "outFile": "en/chapters/2-programming-for-web-part-one.html"
         },
         {
             "title": "Programming for the web, part two",
-            "inFile": "book-files/en/chapters/3-programming-for-web-part-two.omelet",
-            "outFile": "en/chapters/3-programming-for-web-part-two/index.html"
+            "inFile": "book-files/en/chapters/3-programming-for-web-part-two.njk",
+            "outFile": "en/chapters/3-programming-for-web-part-two.html"
         },
         {
             "title": "Deep dive into JavaScript",
-            "inFile": "book-files/en/chapters/4-deep-dive-into-javascript.omelet",
-            "outFile": "en/chapters/4-deep-dive-into-javascript/index.html"
+            "inFile": "book-files/en/chapters/4-deep-dive-into-javascript.njk",
+            "outFile": "en/chapters/4-deep-dive-into-javascript.html"
         }
     ]
 }
