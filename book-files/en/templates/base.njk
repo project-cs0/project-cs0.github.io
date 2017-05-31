@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="{{metadata.language}}">
+<html lang="{{ metadata.language }}">
     <head>
-        <title>{{metadata.bookTitle}} | {% block pageTitle %}{% endblock %}</title>
-        <link rel="stylesheet" href="{{rootPath}}/assets/css/default.css" />
+        <title>{{ metadata.bookTitle }} | {% block pageTitle %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ rootPath }}/assets/css/default.css" />
     </head>
     <body>
         <header>
@@ -14,5 +14,10 @@
         <main>
             {% block pageBody %}{% endblock %}
         </main>
+        <footer>
+            Made with ♥ in Seattle, WA
+        </footer>
+
+        <script type="text/javascript" src="{{ rootPath }}/assets/js/prism.js"></script>
     </body>
 </html>

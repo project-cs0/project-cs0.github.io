@@ -17,8 +17,8 @@ Introduction
         </nav>
         <main>
             
-<h1></h1>
 
+<h1>Introduction</h1>
 
 <h2>What am I reading?</h2>
 <p>
@@ -46,6 +46,44 @@ Introduction
     are completely valid reasons, and there are countless others that are
     equally valid. Whatever your reason, we hope that you will find this book
     helpful in your journey.
+<p>
+    Here is an example of some code: <code class="language-javascript">test</code>.
+    And some more: <code class="language-javascript">47</code>.
+
+
+<pre><code class="language-javascript">const nunjucks = require('nunjucks')
+const fs = require('fs')
+const path = require('path')
+const mkdirp = require('mkdirp')
+
+function doIt(reid, mitchell) {
+    return x + 47;
+}
+
+const currentDirectory = require('process').cwd() || ''
+
+const getMetadata = (lang) => {
+    return require(`./book-files/${lang}/metadata.json`)
+}
+
+// Some comment
+const omeletOptions = {}
+
+const metadata = getMetadata('en')
+
+const toRender = metadata.chapters.concat([metadata.tableOfContents])
+const longLine = "this is a very long line!! it will hopefully cause a horizontal scrollbar to appear";
+
+for (let item of toRender) {
+    const rendered = nunjucks.render(item.inFile, {
+        "metadata": metadata,
+        "rootPath": currentDirectory,
+    })
+
+    mkdirp.sync(path.dirname(item.outFile))
+    fs.writeFileSync(item.outFile, rendered, 'UTF-8')
+}</pre></code>
+
 
 <h2>How should I read this book?</h2>
 <p>
@@ -64,5 +102,10 @@ Introduction
 
 
         </main>
+        <footer>
+            Made with ♥ in Seattle, WA
+        </footer>
+
+        <script type="text/javascript" src="C:\Users\reidm\Code\project-ocelot/assets/js/prism.js"></script>
     </body>
 </html>

@@ -1,0 +1,3 @@
+{% macro js() %}
+<pre><code class="language-javascript">{{ caller() | replace("<script>", "") | replace("</script>", "") | trim }}</pre></code>
+{% endmacro %}
