@@ -1,28 +1,54 @@
-body {
+html, body {
     padding: 0;
     margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
 }
 
 header, footer {
     background: #222;
     color: #eee;
     padding: 10px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+header {
+    background: #263448;
+    height: 100px;
+    border-bottom: 10px solid #222;
+}
+
+footer a {
+    color: #eee;
+}
+
+footer li {
+    list-style-type: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Helvetica', 'Arial', sans-serif;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 p {
     font-family: 'Georgia', 'Times', serif;
     line-height: 1.6em;
     font-size: 1.2em;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 main {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 10px;
+    margin: 20px auto 40px auto;
     color: #222;
 }
 
@@ -37,6 +63,10 @@ nav {
 
 nav li {
     list-style-type: none;
+}
+
+.glossed-word {
+    font-weight: bold;
 }
 
 /* region: syntax highlighting */
@@ -60,7 +90,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 16px;
 	margin: .5em 0;
 	overflow: auto;
 }

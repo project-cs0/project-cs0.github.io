@@ -1,57 +1,25 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Textbook | 
-Chapter: 
-Introduction
 
-</title>
-        <link rel="stylesheet" href="C:\Users\reidm\Code\project-ocelot/assets/css/default.css" />
-    </head>
-    <body>
-        <header>
-            <button class="menu">menu</button>
-        </header>
-        <nav>
-            <!-- for chapter in chapters... -->
-        </nav>
-        <main>
-            
+<head>
+    <title>Textbook | Chapter: Introduction </title>
+    <link rel="stylesheet" href="C:\Users\reidm\Code\project-ocelot/assets/css/default.css" /> </head>
 
-<h1>Introduction</h1>
-
-<h2>What am I reading?</h2>
-<p>
-    This is a free, online textbook designed to teach computer science from
-    the ground up. It starts at the very beginning, meaning it assumes that the
-    reader has no prior experience with computer science or with programming.
-<p>
-    The creators of this book want to make these concepts accessible to
-    <i>everyone</i>. Whether or not they realize it, most people in today's
-    world interact with things that have been programmed by someone else on
-    a daily basis. You probably do, too. Maybe you use a computer to access
-    the internet. Maybe you send text messages from a smartphone. Maybe you
-    wear a digital watch or a hearing aid. All of these things, and many more,
-    were designed and programmed by people just like you. And all of those
-    programmers started in the same place we assume you are now: with no
-    knowledge of computer science. Nobody is born knowing these things. They are
-    always learned. This book hopes to help you start that learning.
-
-<h2>Why am I reading it?</h2>
-<p>
-    Good question... There are lots of reasons you might be reading this book.
-    Perhaps it's required reading for a school class. Maybe you're using it
-    to study for an exam. Or maybe you just stumbled across it on the internet
-    and are hoping it might help you teach yourself how to program. All of these
-    are completely valid reasons, and there are countless others that are
-    equally valid. Whatever your reason, we hope that you will find this book
-    helpful in your journey.
-<p>
-    Here is an example of some code: <code class="language-javascript">test</code>.
-    And some more: <code class="language-javascript">47</code>.
-
-
-<pre><code class="language-javascript">const nunjucks = require('nunjucks')
+<body>
+    <header> <button class="menu">menu</button> </header>
+    <main> <a class="chapter-link next" href="C:\Users\reidm\Code\project-ocelot/en/chapters/1-programming-without-code.html">Programming without code</a>
+        <h1>Introduction</h1>
+        <h2>What am I reading?</h2>
+        <p> This is a free, online textbook designed to teach computer science from the ground up. It starts at the very beginning, meaning it assumes that the reader has no prior experience with computer science or with programming. </p>
+        <p> The creators of this book want to make these concepts accessible to <i>everyone</i>. Whether or not they realize it, most people in today's world interact with things that have been programmed by someone else on a daily basis. You probably do,
+            too. Maybe you use a computer to access the internet. Maybe you send text messages from a smartphone. Maybe you wear a digital watch or a hearing aid. All of these things, and many more, were designed and programmed by people just like you.
+            And all of those programmers started in the same place we assume you are now: with no knowledge of computer science. Nobody is born knowing these things. They are always learned. This book hopes to help you start that learning. </p>
+        <h2>Why am I reading it?</h2>
+        <p> Good question... There are lots of reasons you might be reading this book. Perhaps it's required reading for a school class. Maybe you're using it to study for an exam. Or maybe you just stumbled across it on the internet and are hoping it might
+            help you teach yourself how to program. All of these are completely valid reasons, and there are countless others that are equally valid. Whatever your reason, we hope that you will find this book helpful in your <span class="glossed-word">journey</span>.
+            </p>
+        <p> Here is an example of some code: <code class="language-javascript">test</code>. And some more: <code class="language-javascript">47</code>. </p>
+        <pre><code class="language-javascript">const nunjucks = require('nunjucks')
 const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
@@ -82,30 +50,21 @@ for (let item of toRender) {
 
     mkdirp.sync(path.dirname(item.outFile))
     fs.writeFileSync(item.outFile, rendered, 'UTF-8')
-}</pre></code>
+}</code></pre>
+        <h2>How should I read this book?</h2>
+        <p> This is another question that is difficult for us, the creators of this book, to answer. There could be a million different people reading this book for a million different reasons, and each could have their own learning style. Some might read
+            every word, in order, from beginning to end. Others might skim the section headings and read the ones that sound the most interesting. Some might only do the labs, or just glance at the glossary occasionally for reference. We want this book
+            to be flexible and to work for as many people as possible. It should not matter if you're reading this on a computer at your local library, printed on paper and lit by candlelight, or on a smartphone while using the bathroom. Just as there
+            is no single type of programmer, there is no single way to learn to program. </p>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#">Mission statement</a></li>
+            <li><a href="C:\Users\reidm\Code\project-ocelot/en/acknowledgements.html">Acknowledgements</a></li>
+            <li><a href="#">View book on GitHub</a></li>
+        </ul>
+    </footer>
+    <script type="text/javascript" src="C:\Users\reidm\Code\project-ocelot/assets/js/prism.js"></script>
+</body>
 
-
-<h2>How should I read this book?</h2>
-<p>
-    This is another question that is difficult for us, the creators of this
-    book, to answer. There could be a million different people reading this
-    book for a million different reasons, and each could have their own learning
-    style. Some might read every word, in order, from beginning to end. Others
-    might skim the section headings and read the ones that sound the most
-    interesting. Some might only do the labs, or just glance at the glossary
-    occasionally for reference. We want this book to be flexible and to work
-    for as many people as possible. It should not matter if you're reading this
-    on a computer at your local library, printed on paper and lit by candlelight,
-    or on a smartphone while using the bathroom. Just as there is no single
-    type of programmer, there is no single way to learn to program.
-
-
-
-        </main>
-        <footer>
-            Made with ♥ in Seattle, WA
-        </footer>
-
-        <script type="text/javascript" src="C:\Users\reidm\Code\project-ocelot/assets/js/prism.js"></script>
-    </body>
 </html>

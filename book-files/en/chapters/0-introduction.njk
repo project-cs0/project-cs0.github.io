@@ -1,18 +1,13 @@
 {% extends '../templates/chapter.njk' %}
-{% from '../templates/macros.njk' import js %}
-
-{% block chapterTitle %}
-Introduction
-{% endblock %}
+{% from '../templates/macros.njk' import js, gloss %}
 
 {% block chapterBody %}
-<h1>Introduction</h1>
-
 <h2>What am I reading?</h2>
 <p>
     This is a free, online textbook designed to teach computer science from
     the ground up. It starts at the very beginning, meaning it assumes that the
     reader has no prior experience with computer science or with programming.
+</p>
 <p>
     The creators of this book want to make these concepts accessible to
     <i>everyone</i>. Whether or not they realize it, most people in today's
@@ -24,7 +19,7 @@ Introduction
     programmers started in the same place we assume you are now: with no
     knowledge of computer science. Nobody is born knowing these things. They are
     always learned. This book hopes to help you start that learning.
-
+</p>
 <h2>Why am I reading it?</h2>
 <p>
     Good question... There are lots of reasons you might be reading this book.
@@ -33,11 +28,12 @@ Introduction
     and are hoping it might help you teach yourself how to program. All of these
     are completely valid reasons, and there are countless others that are
     equally valid. Whatever your reason, we hope that you will find this book
-    helpful in your journey.
+    helpful in your {{ gloss("journey") }}.
+</p>
 <p>
     Here is an example of some code: <code class="language-javascript">test</code>.
     And some more: <code class="language-javascript">47</code>.
-
+</p>
 {% call js() %}<script>
 const nunjucks = require('nunjucks')
 const fs = require('fs')
@@ -86,5 +82,5 @@ for (let item of toRender) {
     on a computer at your local library, printed on paper and lit by candlelight,
     or on a smartphone while using the bathroom. Just as there is no single
     type of programmer, there is no single way to learn to program.
-
+</p>
 {% endblock %}

@@ -5,6 +5,13 @@
         "inFile": "book-files/en/table-of-contents.njk",
         "outFile": "en/index.html"
     },
+    "pages": [
+        {
+            "title": "Acknowledgements",
+            "inFile": "book-files/en/acknowledgements.njk",
+            "outFile": "en/acknowledgements.html"
+        }
+    ],
     "chapters": [
         {
             "title": "Introduction",

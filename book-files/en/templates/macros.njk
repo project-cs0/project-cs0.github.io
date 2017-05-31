@@ -1,3 +1,7 @@
 {% macro js() %}
-<pre><code class="language-javascript">{{ caller() | replace("<script>", "") | replace("</script>", "") | trim }}</pre></code>
+<pre><code class="language-javascript">{{ caller() | replace("<script>", "") | replace("</script>", "") | trim }}</code></pre>
 {% endmacro %}
+
+{% macro gloss(word) -%}
+<span class="glossed-word">{{ word }}</span>
+{%- endmacro %}

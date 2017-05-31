@@ -1,21 +1,22 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
     <head>
-        <title>{{ metadata.bookTitle }} | {% block pageTitle %}{% endblock %}</title>
+        <title>{{ metadata.bookTitle }} | {% block pageTitle -%}{%- endblock %}</title>
         <link rel="stylesheet" href="{{ rootPath }}/assets/css/default.css" />
     </head>
     <body>
         <header>
             <button class="menu">menu</button>
         </header>
-        <nav>
-            <!-- for chapter in chapters... -->
-        </nav>
         <main>
             {% block pageBody %}{% endblock %}
         </main>
         <footer>
-            Made with ♥ in Seattle, WA
+            <ul>
+                <li><a href="#">Mission statement</a></li>
+                <li><a href="{{ rootPath }}/en/acknowledgements.html">Acknowledgements</a></li>
+                <li><a href="#">View book on GitHub</a></li>
+            </ul>
         </footer>
 
         <script type="text/javascript" src="{{ rootPath }}/assets/js/prism.js"></script>
