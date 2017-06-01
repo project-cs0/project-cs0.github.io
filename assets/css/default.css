@@ -1,3 +1,9 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html, body {
     padding: 0;
     margin: 0;
@@ -19,9 +25,39 @@ header, footer {
 }
 
 header {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     background: #263448;
-    height: 100px;
-    border-bottom: 10px solid #222;
+    padding: 20px;
+}
+
+header .site-title {
+    text-decoration: none;
+    font-size: 32px;
+    color: #263448;
+    background: #eee;
+    padding: 5px 10px;
+}
+
+header nav {
+    font-size: 20px;
+    float: right;
+}
+
+header nav ul {
+    margin: 0;
+}
+
+header nav li {
+    list-style-type: none;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #eee;
+}
+
+header nav a:hover {
+    text-decoration: underline;
 }
 
 footer a {
@@ -52,21 +88,53 @@ main {
     color: #222;
 }
 
-nav {
-    width: 400px;
-    position: fixed;
-    text-align: right;
-    top: 100px;
-    left: 50%;
-    margin-left: -600px;
+.chapter-link {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background: #ddd;
+    padding: 10px;
+    margin: 0;
+    color: #333;
+    width: 50%;
+    display: inline-block;
+    text-decoration: none;
 }
 
-nav li {
-    list-style-type: none;
+.chapter-link:hover {
+    text-decoration: underline;
+}
+
+.chapter-link next {
+    float: left;
+}
+
+.chapter-link previous {
+    float: left;
+}
+
+a.glossary-link {
+    color: #000;
+    text-decoration: none;
+}
+
+a.glossary-link:hover {
+    text-decoration: underline;
 }
 
 .glossed-word {
     font-weight: bold;
+    margin-right: 2px;
+}
+
+figure.code-example {
+    margin: 0;
+}
+
+figure.code-example > figcaption {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: #eee;
+    font-size: 12px;
+    background: #437386;
+    padding: 3px 14px;
 }
 
 /* region: syntax highlighting */
@@ -91,7 +159,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 16px;
-	margin: .5em 0;
+	margin: 0;
 	overflow: auto;
 }
 

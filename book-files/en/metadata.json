@@ -1,11 +1,16 @@
 {
     "language": "en",
-    "bookTitle": "Textbook",
+    "bookTitle": "CS0",
     "tableOfContents": {
         "inFile": "book-files/en/table-of-contents.njk",
         "outFile": "en/index.html"
     },
     "pages": [
+        {
+            "title": "glossary-link",
+            "inFile": "book-files/en/glossary.njk",
+            "outFile": "en/glossary.html"
+        },
         {
             "title": "Acknowledgements",
             "inFile": "book-files/en/acknowledgements.njk",

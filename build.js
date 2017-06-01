@@ -4,19 +4,25 @@ const path = require('path')
 const mkdirp = require('mkdirp')
 const beautifier = require('js-beautify')
 
-const beautifyHtml = (html) => {
-    return beautifier.html(html, {
-        "preserve_newlines": false
-    })
+const renderHtmlFile = (inFile, outFile, context) => {
+    context = context || {}
+    // Render & format the file contents
+    const rendered = beautifier.html(
+        nunjucks.render(inFile, context),
+        {
+            "preserve_newlines": false,
+        })
+    // Make sure the containing directory exists
+    mkdirp.sync(path.dirname(outFile))
+    // Write the contents to file
+    fs.writeFileSync(outFile, rendered, 'UTF-8')
 }
-
-const currentDirectory = require('process').cwd() || ''
 
 const getMetadata = (lang) => {
     return require(`./book-files/${lang}/metadata.json`)
 }
 
-const omeletOptions = {}
+const currentDirectory = require('process').cwd() || ''
 
 const metadata = getMetadata('en')
 
@@ -33,31 +39,23 @@ for (let i = 0; i < metadata.chapters.length; i++) {
 
 // Render chapters
 for (let chapter of metadata.chapters) {
-    const rendered = beautifyHtml(nunjucks.render(chapter.inFile, {
+    renderHtmlFile(chapter.inFile, chapter.outFile, {
         "metadata": metadata,
         "rootPath": currentDirectory,
         "chapterMetadata": chapter
-    }))
-
-    mkdirp.sync(path.dirname(chapter.outFile))
-    fs.writeFileSync(chapter.outFile, rendered, 'UTF-8')
+    })
 }
 
 // Render other pages
 for (let page of metadata.pages) {
-    const rendered = beautifyHtml(nunjucks.render(page.inFile, {
+    renderHtmlFile(page.inFile, page.outFile, {
         "metadata": metadata,
         "rootPath": currentDirectory,
-    }))
-
-    mkdirp.sync(path.dirname(page.outFile))
-    fs.writeFileSync(page.outFile, rendered, 'UTF-8')
+    })
 }
 
-const tblOfContents = beautifyHtml(nunjucks.render(metadata.tableOfContents.inFile, {
+// Render table of contents
+renderHtmlFile(metadata.tableOfContents.inFile, metadata.tableOfContents.outFile, {
     "metadata": metadata,
     "rootPath": currentDirectory,
-}))
-
-mkdirp.sync(path.dirname(metadata.tableOfContents.outFile))
-fs.writeFileSync(metadata.tableOfContents.outFile, tblOfContents, 'UTF-8')
+})

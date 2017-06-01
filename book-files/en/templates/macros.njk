@@ -1,7 +1,10 @@
 {% macro js() %}
+<figure class="code-example">
+<figcaption>JavaScript</figcaption>
 <pre><code class="language-javascript">{{ caller() | replace("<script>", "") | replace("</script>", "") | trim }}</code></pre>
+</figure>
 {% endmacro %}
 
 {% macro gloss(word) -%}
-<span class="glossed-word">{{ word }}</span>
+<a class="glossary-link" href="{{ rootPath }}/en/glossary.html#{{ word }}" title="View definition of '{{ word }}' in glossary"><span class="glossed-word">{{ word }}</span><i class="material-icons md-16">help</i></a>
 {%- endmacro %}

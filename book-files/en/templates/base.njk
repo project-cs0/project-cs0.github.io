@@ -3,10 +3,16 @@
     <head>
         <title>{{ metadata.bookTitle }} | {% block pageTitle -%}{%- endblock %}</title>
         <link rel="stylesheet" href="{{ rootPath }}/assets/css/default.css" />
+        <link rel="stylesheet" href="{{ rootPath }}/assets/icons/material-icons.css" />
     </head>
     <body>
         <header>
-            <button class="menu">menu</button>
+            <a class="site-title" href="{{ rootPath }}/en/index.html">CS0</a>
+            <nav>
+                <ul>
+                    <li><a href="{{ rootPath }}/en/index.html">table of contents</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             {% block pageBody %}{% endblock %}
