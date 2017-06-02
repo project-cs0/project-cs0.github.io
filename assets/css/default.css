@@ -1,185 +1,159 @@
+/** NOTE: This file was auto-generated from SCSS. **/
+/** Do not modify this file directly. Instead, modify the corresponding SCSS file and recompile it. **/
+/** Any changes made directly to this file will be lost. **/
+
 *, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 html, body {
-    padding: 0;
-    margin: 0;
-}
+  padding: 0;
+  margin: 0; }
 
 html {
-    height: 100%;
-}
+  height: 100%; }
 
 body {
-    min-height: 100%;
-}
+  min-height: 100%; }
 
 header, footer {
-    background: #222;
-    color: #eee;
-    padding: 10px;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}
+  background: #222;
+  color: #eee;
+  padding: 10px;
+  font-family: "Helvetica", "Arial", sans-serif; }
 
 header {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    background: #263448;
-    padding: 20px;
-}
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  background: #263448;
+  padding: 20px; }
 
 header .site-title {
-    text-decoration: none;
-    font-size: 32px;
-    color: #263448;
-    background: #eee;
-    padding: 5px 10px;
-}
+  text-decoration: none;
+  font-size: 32px;
+  color: #263448;
+  background: #eee;
+  padding: 5px 10px; }
 
 header nav {
-    font-size: 20px;
-    float: right;
-}
+  font-size: 20px;
+  float: right; }
 
 header nav ul {
-    margin: 0;
-}
+  margin: 0; }
 
 header nav li {
-    list-style-type: none;
-}
+  list-style-type: none; }
 
 header nav a {
-    text-decoration: none;
-    color: #eee;
-}
+  text-decoration: none;
+  color: #eee; }
 
 header nav a:hover {
-    text-decoration: underline;
-}
+  text-decoration: underline; }
 
 footer a {
-    color: #eee;
-}
+  color: #eee; }
 
 footer li {
-    list-style-type: none;
-}
+  list-style-type: none; }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    padding-left: 16px;
-    padding-right: 16px;
-}
+  font-family: "Helvetica", "Arial", sans-serif;
+  padding-left: 16px;
+  padding-right: 16px; }
 
 p {
-    font-family: 'Georgia', 'Times', serif;
-    line-height: 1.6em;
-    font-size: 1.2em;
-    padding-left: 16px;
-    padding-right: 16px;
-}
+  font-family: "Georgia", "Times", serif;
+  line-height: 1.6em;
+  font-size: 1.2em;
+  padding-left: 16px;
+  padding-right: 16px; }
 
 main {
-    max-width: 800px;
-    margin: 20px auto 40px auto;
-    color: #222;
-}
+  max-width: 800px;
+  margin: 20px auto 40px auto;
+  color: #222; }
 
-.chapter-link {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    background: #ddd;
-    padding: 10px;
+nav.chapter-nav {
+  width: 100%; }
+  nav.chapter-nav ul {
+    padding: 0; }
+    nav.chapter-nav ul li {
+      width: 50%;
+      list-style-type: none; }
+      nav.chapter-nav ul li .previous {
+        float: left;
+        text-align: left; }
+      nav.chapter-nav ul li .next {
+        float: right;
+        text-align: right; }
+  nav.chapter-nav a {
+    font-family: "Helvetica", "Arial", sans-serif;
     margin: 0;
     color: #333;
-    width: 50%;
     display: inline-block;
-    text-decoration: none;
-}
-
-.chapter-link:hover {
-    text-decoration: underline;
-}
-
-.chapter-link next {
-    float: left;
-}
-
-.chapter-link previous {
-    float: left;
-}
+    text-decoration: none; }
+    nav.chapter-nav a :hover {
+      text-decoration: underline; }
 
 a.glossary-link {
-    color: #000;
-    text-decoration: none;
-}
+  color: #000;
+  text-decoration: none; }
 
 a.glossary-link:hover {
-    text-decoration: underline;
-}
+  text-decoration: underline; }
 
 .glossed-word {
-    font-weight: bold;
-    margin-right: 2px;
-}
+  font-weight: bold;
+  margin-right: 2px; }
 
 figure.code-example {
-    margin: 0;
-}
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  margin: 0; }
 
 figure.code-example > figcaption {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    color: #eee;
-    font-size: 12px;
-    background: #437386;
-    padding: 3px 14px;
-}
+  color: #eee;
+  font-size: 12px;
+  background: #437386;
+  padding: 3px 14px; }
 
 /* region: syntax highlighting */
-
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #e0e0e0;
-	background: #263448;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-}
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  color: #e0e0e0;
+  background: #263448;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4; }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 16px;
-	margin: 0;
-	overflow: auto;
-}
+  padding: 16px;
+  margin: 0;
+  overflow: auto; }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    padding: .1em .2em;
-    border-radius: .3em;
-    white-space: normal;
-}
+  padding: .1em .2em;
+  border-radius: .3em;
+  white-space: normal; }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #9ab;
-}
+  color: #9ab; }
 
 .token.punctuation {
-	color: #999;
-}
+  color: #999; }
 
 .token.property,
 .token.tag,
@@ -188,8 +162,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #ffc469;
-}
+  color: #ffc469; }
 
 .token.selector,
 .token.attr-name,
@@ -197,37 +170,39 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #90ca1d;
-}
+  color: #90ca1d; }
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #a67f59;
-}
+  color: #a67f59; }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #91d6ff;
-    font-weight: bold;
-}
+  color: #91d6ff;
+  font-weight: bold; }
 
 .token.function {
-	color: #DD4A68;
-}
+  color: #DD4A68; }
 
 .token.regex,
 .token.important,
 .token.variable {
-	color: #e90;
-}
+  color: #e90; }
 
-.token.important, .token.bold { font-weight: bold; }
-.token.italic { font-style: italic; }
-.token.entity { cursor: help; }
-.namespace { opacity: .7; }
+.token.important, .token.bold {
+  font-weight: bold; }
+
+.token.italic {
+  font-style: italic; }
+
+.token.entity {
+  cursor: help; }
+
+.namespace {
+  opacity: .7; }
 
 /* endregion: syntax highlighting */

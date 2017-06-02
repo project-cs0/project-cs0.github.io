@@ -1,16 +1,27 @@
 {% extends './base.njk' %}
+{% from './macros.njk' import icon %}
 
 {% block pageTitle %}
 Chapter: {{ chapterMetadata.title }}
 {% endblock %}
 
 {% block pageBody %}
-{% if chapterMetadata.previous %}
-    <a class="chapter-link previous" href="{{ rootPath + '/' + chapterMetadata.previous.outFile }}">{{ chapterMetadata.previous.title }}</a>
-{% endif %}
-{% if chapterMetadata.next %}
-    <a class="chapter-link next" href="{{ rootPath + '/' + chapterMetadata.next.outFile }}">{{ chapterMetadata.next.title }}</a>
-{% endif %}
+<nav class="chapter-nav">
+    <ul>
+    <li class="chapter-link previous">
+    {% if chapterMetadata.previous %}
+        {{ icon("chevron-left") }}
+        <a href="{{ rootPath + '/' + chapterMetadata.previous.outFile }}">{{ chapterMetadata.previous.title }}</a>
+    {% endif %}
+    </li>
+    <li class="chapter-link next">
+    {% if chapterMetadata.next %}
+        <a href="{{ rootPath + '/' + chapterMetadata.next.outFile }}">{{ chapterMetadata.next.title }}</a>
+        {{ icon("chevron-right") }}
+    {% endif %}
+    </li>
+    </ul>
+</nav>
 <h1>{{ chapterMetadata.title }}</h1>
 {% block chapterBody %}{% endblock %}
 {% endblock %}

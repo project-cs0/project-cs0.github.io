@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
 const beautifier = require('js-beautify')
+const sass = require('node-sass')
 
 const renderHtmlFile = (inFile, outFile, context) => {
     context = context || {}
@@ -59,3 +60,20 @@ renderHtmlFile(metadata.tableOfContents.inFile, metadata.tableOfContents.outFile
     "metadata": metadata,
     "rootPath": currentDirectory,
 })
+
+// Render CSS files
+sass.render({
+    file: './assets/scss/default.scss',
+}, (err, result) => {
+    if (err) return console.error(err)
+
+    const renderedCss = [
+        '/** NOTE: This file was auto-generated from SCSS. **/',
+        '/** Do not modify this file directly. Instead, modify the corresponding SCSS file and recompile it. **/',
+        '/** Any changes made directly to this file will be lost. **/',
+        '',
+        '',
+    ].join("\n") + result.css.toString()
+
+    fs.writeFileSync('./assets/css/default.css', renderedCss, 'UTF-8')
+});
