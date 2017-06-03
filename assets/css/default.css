@@ -106,7 +106,7 @@ a.glossary-link:hover {
 
 .glossed-word {
   font-weight: bold;
-  margin-right: 2px; }
+  margin-right: 4px; }
 
 figure.code-example {
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
