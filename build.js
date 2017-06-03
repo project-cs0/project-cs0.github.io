@@ -5,6 +5,8 @@ const mkdirp = require('mkdirp')
 const beautifier = require('js-beautify')
 const sass = require('node-sass')
 
+const publicFolder = 'docs'
+
 const renderHtmlFile = (inFile, outFile, context) => {
     context = context || {}
     // Render & format the file contents
@@ -23,7 +25,7 @@ const getMetadata = (lang) => {
     return require(`./book-files/${lang}/metadata.json`)
 }
 
-const currentDirectory = require('process').cwd() || ''
+const currentDirectory = '' // require('process').cwd() || ''
 
 const metadata = getMetadata('en')
 
@@ -40,7 +42,7 @@ for (let i = 0; i < metadata.chapters.length; i++) {
 
 // Render chapters
 for (let chapter of metadata.chapters) {
-    renderHtmlFile(chapter.inFile, chapter.outFile, {
+    renderHtmlFile(chapter.inFile, publicFolder + '/' + chapter.outFile, {
         "metadata": metadata,
         "rootPath": currentDirectory,
         "chapterMetadata": chapter
@@ -49,21 +51,21 @@ for (let chapter of metadata.chapters) {
 
 // Render other pages
 for (let page of metadata.pages) {
-    renderHtmlFile(page.inFile, page.outFile, {
+    renderHtmlFile(page.inFile, publicFolder + '/' + page.outFile, {
         "metadata": metadata,
         "rootPath": currentDirectory,
     })
 }
 
 // Render table of contents
-renderHtmlFile(metadata.tableOfContents.inFile, metadata.tableOfContents.outFile, {
+renderHtmlFile(metadata.tableOfContents.inFile, publicFolder + '/' + metadata.tableOfContents.outFile, {
     "metadata": metadata,
     "rootPath": currentDirectory,
 })
 
 // Render CSS files
 sass.render({
-    file: './assets/scss/default.scss',
+    file: './docs/assets/scss/default.scss',
 }, (err, result) => {
     if (err) return console.error(err)
 
@@ -75,5 +77,5 @@ sass.render({
         '',
     ].join("\n") + result.css.toString()
 
-    fs.writeFileSync('./assets/css/default.css', renderedCss, 'UTF-8')
+    fs.writeFileSync('./docs/assets/css/default.css', renderedCss, 'UTF-8')
 });
