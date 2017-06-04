@@ -9,6 +9,6 @@
 </figure>
 {% endmacro %}
 
-{% macro gloss(word) -%}
-<a class="glossary-link" href="{{ rootPath }}/en/glossary.html#{{ word }}" title="View definition of '{{ word }}' in glossary"><span class="glossed-word">{{ word }}</span>{{ icon("question-circle") }}</a>
+{% macro gloss(word, metadata) -%}
+<a class="glossary-link" href="/{{ metadata['language'] }}/{{ metadata['glossary']['out-file'] }}#{{ word }}" title="{{ metadata['glossary']['link-title-format'] | replace('{0}', word) }}"><span class="glossed-word">{{ word }}</span>{{ icon("question-circle") }}</a>
 {%- endmacro %}

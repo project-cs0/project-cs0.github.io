@@ -1,8 +1,8 @@
-{% extends '../templates/chapter.njk' %}
-{% from '../templates/macros.njk' import js, gloss %}
+{% extends '../../chapter.njk' %}
+{% from '../../macros.njk' import js, gloss %}
 
 {% block chapterBody %}
-<h2>What am I reading?</h2>
+<h2>What am I reading??</h2>
 <p>
     This is a free, online textbook designed to teach computer science from
     the ground up. It starts at the very beginning, meaning it assumes that the
@@ -28,7 +28,7 @@
     and are hoping it might help you teach yourself how to program. All of these
     are completely valid reasons, and there are countless others that are
     equally valid. Whatever your reason, we hope that you will find this book
-    helpful in your {{ gloss("journey") }}.
+    helpful in your {{ gloss("journey", metadata) }}.
 </p>
 <p>
     Here is an example of some code: <code class="language-javascript">test</code>.

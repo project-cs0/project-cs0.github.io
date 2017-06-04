@@ -1,0 +1,16 @@
+{% extends './base.njk' %}
+
+{% block pageTitle %}
+{{ metadata['table-of-contents']['page-title'] }}
+{% endblock %}
+
+{% block pageBody %}
+<h1>{{ metadata['table-of-contents']['page-title'] }}</h1>
+<ol>
+{% for chapter in metadata.chapters %}
+    <li>
+        <a href="{{ '/' + chapter['out-file'] }}">{{ chapter.title }}</a>
+    </li>
+{% endfor %}
+</ol>
+{% endblock %}

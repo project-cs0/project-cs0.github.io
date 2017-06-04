@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ metadata['language'] }}">
+    <head>
+        <title>{{ metadata["book-title"] }} | {% block pageTitle -%}{%- endblock %}</title>
+        <link rel="stylesheet" href="/assets/css/default.css" />
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <a class="site-title" href="/">{{ metadata["book-title"] }}</a>
+            <nav>
+                <ul>
+                    <li><a href="/{{ metadata['language'] }}">{{ metadata['table-of-contents']['page-title'] | lower }}</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block pageBody %}{% endblock %}
+        </main>
+        <footer>
+            <ul>
+                <li><a href="#">Mission statement</a></li>
+                <li><a href="/{{ metadata['language'] }}/{{ metadata['acknowledgements']['out-file'] }}">{{ metadata['acknowledgements']['page-title'] }}</a></li>
+            </ul>
+        </footer>
+
+        <script type="text/javascript" src="/assets/js/prism.js"></script>
+        <script src="{process.env.BROWSER_REFRESH_URL}"></script>
+    </body>
+</html>

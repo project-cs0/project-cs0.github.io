@@ -5,7 +5,7 @@ const mkdirp = require('mkdirp')
 const beautifier = require('js-beautify')
 const sass = require('node-sass')
 
-const publicFolder = 'docs'
+const languages = ['en']
 
 const renderHtmlFile = (inFile, outFile, context) => {
     context = context || {}
@@ -21,51 +21,47 @@ const renderHtmlFile = (inFile, outFile, context) => {
     fs.writeFileSync(outFile, rendered, 'UTF-8')
 }
 
-const getMetadata = (lang) => {
-    return require(`./book-files/${lang}/metadata.json`)
-}
+for (let language of languages) {
+    const metadata = require(`./book-files/${language}/metadata.json`)
 
-const currentDirectory = '' // require('process').cwd() || ''
+    // Pre-process chapters so that each chapter has a reference to the previous/next chapter
+    for (let i = 0; i < metadata.chapters.length; i++) {
+        if (i -1 >= 0) {
+            metadata.chapters[i].previous = metadata.chapters[i - 1]
+        }
 
-const metadata = getMetadata('en')
-
-// Pre-process chapters so that each chapter has a reference to the previous/next chapter
-for (let i = 0; i < metadata.chapters.length; i++) {
-    if (i -1 >= 0) {
-        metadata.chapters[i].previous = metadata.chapters[i - 1]
+        if (i + 1 < metadata.chapters.length) {
+            metadata.chapters[i].next = metadata.chapters[i + 1]
+        }
     }
 
-    if (i + 1 < metadata.chapters.length) {
-        metadata.chapters[i].next = metadata.chapters[i + 1]
+    // Render chapters
+    for (let chapter of metadata.chapters) {
+        renderHtmlFile(
+            `./book-files/${language}/chapters/${chapter.number}.njk`,
+            `${language}/${chapter['out-file']}`, 
+            {
+                'metadata': metadata,
+                'chapterMetadata': chapter
+            })
+    }
+
+    // Render other pages
+    const pageNames = [ 'table-of-contents', 'glossary', 'acknowledgements' ]
+    for (let pageName of pageNames) {
+        const pageMetadata = metadata[pageName]
+        renderHtmlFile(
+            `./book-files/${pageName}.njk`,
+            `./${language}/${pageMetadata["out-file"]}`, 
+            { 
+                'metadata': metadata 
+            })
     }
 }
-
-// Render chapters
-for (let chapter of metadata.chapters) {
-    renderHtmlFile(chapter.inFile, publicFolder + '/' + chapter.outFile, {
-        "metadata": metadata,
-        "rootPath": currentDirectory,
-        "chapterMetadata": chapter
-    })
-}
-
-// Render other pages
-for (let page of metadata.pages) {
-    renderHtmlFile(page.inFile, publicFolder + '/' + page.outFile, {
-        "metadata": metadata,
-        "rootPath": currentDirectory,
-    })
-}
-
-// Render table of contents
-renderHtmlFile(metadata.tableOfContents.inFile, publicFolder + '/' + metadata.tableOfContents.outFile, {
-    "metadata": metadata,
-    "rootPath": currentDirectory,
-})
 
 // Render CSS files
 sass.render({
-    file: './docs/assets/scss/default.scss',
+    file: './assets/scss/default.scss',
 }, (err, result) => {
     if (err) return console.error(err)
 
@@ -77,5 +73,9 @@ sass.render({
         '',
     ].join("\n") + result.css.toString()
 
-    fs.writeFileSync('./docs/assets/css/default.css', renderedCss, 'UTF-8')
+    fs.writeFileSync('./assets/css/default.css', renderedCss, 'UTF-8')
 });
+
+if (process.send) {
+    process.send('online');
+}

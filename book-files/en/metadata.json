@@ -1,47 +1,63 @@
 {
     "language": "en",
-    "bookTitle": "CS0",
-    "tableOfContents": {
-        "inFile": "book-files/en/table-of-contents.njk",
-        "outFile": "en/index.html"
+    "book-title": "CS0",
+    "table-of-contents": {
+        "page-title": "Table of contents",
+        "out-file": "index.html"
     },
-    "pages": [
-        {
-            "title": "glossary-link",
-            "inFile": "book-files/en/glossary.njk",
-            "outFile": "en/glossary.html"
-        },
-        {
-            "title": "Acknowledgements",
-            "inFile": "book-files/en/acknowledgements.njk",
-            "outFile": "en/acknowledgements.html"
-        }
-    ],
     "chapters": [
         {
+            "number": "0",
             "title": "Introduction",
-            "inFile": "book-files/en/chapters/0-introduction.njk",
-            "outFile": "en/chapters/0-introduction.html"
+            "out-file": "chapters/0/index.html"
         },
         {
+            "number": "1",
             "title": "Programming without code",
-            "inFile": "book-files/en/chapters/1-programming-without-code.njk",
-            "outFile": "en/chapters/1-programming-without-code.html"
+            "out-file": "chapters/1/index.html"
         },
         {
+            "number": "2",
             "title": "Programming for the web, part one",
-            "inFile": "book-files/en/chapters/2-programming-for-web-part-one.njk",
-            "outFile": "en/chapters/2-programming-for-web-part-one.html"
+            "out-file": "chapters/2/index.html"
         },
         {
+            "number": "3",
             "title": "Programming for the web, part two",
-            "inFile": "book-files/en/chapters/3-programming-for-web-part-two.njk",
-            "outFile": "en/chapters/3-programming-for-web-part-two.html"
+            "out-file": "chapters/3/index.html"
         },
         {
+            "number": "4",
             "title": "Deep dive into JavaScript",
-            "inFile": "book-files/en/chapters/4-deep-dive-into-javascript.njk",
-            "outFile": "en/chapters/4-deep-dive-into-javascript.html"
+            "out-file": "chapters/4/index.html"
         }
-    ]
+    ],
+    "glossary": {
+        "page-title": "Glossary",
+        "out-file": "glossary.html",
+        "link-title-format": "View definition of '{0}' in glossary",
+        "glossary-definitions": [
+            {
+                "word": "JavaScript",
+                "definition": "A popular programming language. It is often used with HTML to make interactive websites."
+            }
+        ]
+    },
+    "acknowledgements": {
+        "page-title": "Acknowledgements",
+        "out-file": "acknowledgements.html",
+        "intro": "This book makes use of the following awesome, open-source projects and technologies:",
+        "acknowledgement-list": [
+            {
+                "name": "Nunjucks",
+                "description": "A templating language that helps to generate the HTML pages that make up this book.",
+                "link": "https://mozilla.github.io/nunjucks/"
+            },
+            {
+                "name": "Prism.js",
+                "description": "A syntax highlighting library that powers the code examples seen in this book.",
+                "link": "http://prismjs.com/"
+            }
+        ]
+    }
 }
