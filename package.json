@@ -2,10 +2,9 @@
   "name": "project-cs0",
   "version": "1.0.0",
   "description": "A free, open-source computer science textbook designed to make computer science accessible to *everyone*",
-  "main": "build.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "build": "node build.js",
-    "watch": "browser-refresh build.js",
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,11 +18,12 @@
   "author": "Reid Mitchell",
   "license": "MIT",
   "devDependencies": {
-    "browser-refresh": "^1.7.1",
     "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "js-beautify": "^1.6.14",
-    "mkdirp": "^0.5.1",
-    "node-sass": "^4.5.3",
     "nunjucks": "^3.0.1"
   }
 }
