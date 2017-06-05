@@ -12,7 +12,7 @@
 <ul>
     {% for entry in metadata['acknowledgements']['acknowledgement-list'] %}
     <li>
-        <a href="{{ entry.link }}"><b>{{ entry.name }}</b></a>: {{ entry.description }}
+        <a href="{{ entry.link }}" target="_blank"><b>{{ entry.name }}</b></a>: {{ entry.description }}
     </li>
     {% endfor %}
 </ul>

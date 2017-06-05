@@ -96,14 +96,19 @@ nav.chapter-nav {
     width: 100%;
 
     ul {
+        margin: 0;
         padding: 0;
 
         li {
             width: 50%;
+            padding: 10px;
+            height: 40px;
+            line-height: 20px;
             list-style-type: none;
+            float: left;
     
-            .previous { float: left; text-align: left; }
-            .next { float: right; text-align: right; }
+            &.previous { text-align: left; }
+            &.next { text-align: right; }
         }
     }
 

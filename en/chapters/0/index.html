@@ -41,30 +41,6 @@ const mkdirp = require('mkdirp')
 
 function doIt(reid, mitchell) {
     return x + 47;
-}
-
-const currentDirectory = require('process').cwd() || ''
-
-const getMetadata = (lang) => {
-    return require(`./book-files/${lang}/metadata.json`)
-}
-
-// Some comment
-const omeletOptions = {}
-
-const metadata = getMetadata('en')
-
-const toRender = metadata.chapters.concat([metadata.tableOfContents])
-const longLine = "this is a very long line!! it will hopefully cause a horizontal scrollbar to appear";
-
-for (let item of toRender) {
-    const rendered = nunjucks.render(item.inFile, {
-        "metadata": metadata,
-        "rootPath": currentDirectory,
-    })
-
-    mkdirp.sync(path.dirname(item.outFile))
-    fs.writeFileSync(item.outFile, rendered, 'UTF-8')
 }</code></pre> </figure>
         <h2>How should I read this book?</h2>
         <p> This is another question that is difficult for us, the creators of this book, to answer. There could be a million different people reading this book for a million different reasons, and each could have their own learning style. Some might read

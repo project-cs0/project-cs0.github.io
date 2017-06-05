@@ -74,15 +74,18 @@ main {
 nav.chapter-nav {
   width: 100%; }
   nav.chapter-nav ul {
+    margin: 0;
     padding: 0; }
     nav.chapter-nav ul li {
       width: 50%;
-      list-style-type: none; }
-      nav.chapter-nav ul li .previous {
-        float: left;
+      padding: 10px;
+      height: 40px;
+      line-height: 20px;
+      list-style-type: none;
+      float: left; }
+      nav.chapter-nav ul li.previous {
         text-align: left; }
-      nav.chapter-nav ul li .next {
-        float: right;
+      nav.chapter-nav ul li.next {
         text-align: right; }
   nav.chapter-nav a {
     font-family: "Helvetica", "Arial", sans-serif;
