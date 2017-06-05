@@ -1,12 +1,16 @@
 {% extends './base.njk' %}
 
 {% block pageTitle %}
-Glossary
+{{ metadata['glossary']['page-title'] }}
 {% endblock %}
 
 {% block pageBody %}
-<h1>Glossary</h1>
+<h1>{{ metadata['glossary']['page-title'] }}</h1>
 
 <dl>
+    {% for entry in metadata['glossary']['definition-list'] %}
+    <dt>{{ entry.word }}</dt>
+    <dd>{{ entry.definition }}</dd>
+    {% endfor %}
 </dl>
 {% endblock %}

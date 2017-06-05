@@ -2,4 +2,6 @@
 
 **CS0** is a free, open-source computer science textbook designed to make computer science accessible to *everyone*.
 
-This project adheres to the [Open Code of Conduct](https://github.com/reid47/cs0/blob/master/CONDUCT.md). By engaging with this project (by reading the book, by contributing to it, or by any other means), you are expected to honor this code.
+## Code of Conduct
+
+This project adheres to the [Open Code of Conduct](https://github.com/project-cs0/project-cs0.github.io/wiki/Code-of-Conduct). By engaging with this project (by reading the book, by contributing to it, or by any other means), you are expected to honor this code.

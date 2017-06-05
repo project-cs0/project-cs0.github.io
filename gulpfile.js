@@ -1,3 +1,4 @@
+const fs = require('fs')
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const connect = require('gulp-connect')
@@ -10,18 +11,12 @@ const pageNames = ['table-of-contents', 'glossary', 'acknowledgements']
 
 const htmlTasks = []
 const htmlBeautifyOptions = {
-    "preserve_newlines": false,
+    'preserve_newlines': false,
 }
 
-gulp.task('connect', () => {
-    connect.server({
-        root: '.',
-        livereload: true
-    })
-})
-
-for (let language of languages) {
-    const metadata = require(`./book-files/${language}/metadata.json`)
+const getMetadata = (language) => {
+    const metadata = JSON.parse(
+        fs.readFileSync(`./book-files/${language}/metadata.json`, 'utf8'));
 
     // Pre-process chapters so that each chapter has a reference to the previous/next chapter
     for (let i = 0; i < metadata.chapters.length; i++) {
@@ -34,8 +29,19 @@ for (let language of languages) {
         }
     }
 
+    return metadata
+}
+
+gulp.task('connect', () => {
+    connect.server({
+        root: '.',
+        livereload: true
+    })
+})
+
+for (let language of languages) {
     // Create build tasks for each chapter in this language
-    for (let chapter of metadata.chapters) {
+    for (let chapter of getMetadata(language).chapters) {
         const chapterTaskName = `buildchapter-${chapter.number}-${language}`
         htmlTasks.push(chapterTaskName)
         gulp.task(chapterTaskName, () => {
@@ -43,7 +49,7 @@ for (let language of languages) {
                 .pipe(nunjucksRender({
                     path: 'book-files',
                     data: {
-                        metadata: metadata,
+                        metadata: getMetadata(language),
                         chapterMetadata: chapter,
                     }
                 }))
@@ -55,7 +61,7 @@ for (let language of languages) {
 
     // Create build tasks for each other page in this language
     for (let pageName of pageNames) {
-        const pageMetadata = metadata[pageName]
+        const pageMetadata = getMetadata(language)[pageName]
         const pageTaskName = `buildpage-${pageName}-${language}`
         htmlTasks.push(pageTaskName)
         gulp.task(pageTaskName, () => {
@@ -63,7 +69,7 @@ for (let language of languages) {
                 .pipe(nunjucksRender({
                     path: 'book-files',
                     data: {
-                        metadata: metadata,
+                        metadata: getMetadata(language),
                     }
                 }))
                 .pipe(htmlBeautify(htmlBeautifyOptions))
@@ -87,18 +93,30 @@ gulp.task('livereload', () => {
 })
 
 gulp.task('watch', () => {
+    // For each language...
     for (let language of languages) {
-        const metadata = require(`./book-files/${language}/metadata.json`)
-        for (let chapter of metadata.chapters) {
+        for (let chapter of getMetadata(language).chapters) {
+            // Watch each chapter for changes, and rebuild each chapter when changed
             gulp.watch(`book-files/${language}/chapters/${chapter.number}.njk`, [`buildchapter-${chapter.number}-${language}`])
         }
-        for (let pageName of pageNames) {
-            gulp.watch(`book-files/${pageName}.njk`, [`buildpage-${pageName}-${language}`])
-        }
+
+        // When the metadata file is changed, rebuild all HTML files
+        gulp.watch(`./book-files/${language}/metadata.json`, htmlTasks)
+        
+        // Watch for changes to compiled HTML; reload browser on change
+        gulp.watch(`${language}/**/*`, ['livereload'])
     }
+    
+    // Watch each page for changes, and rebuild each page when changed
+    gulp.watch('book-files/*.njk', htmlTasks)
+
+    // Watch all .scss files for changes, and recompile them when changed
     gulp.watch('assets/scss/**/*.scss', ['sass'])
-    gulp.watch('en/**/*', ['livereload'])
+
+    // Watch assets for changes; reload browser on change
     gulp.watch('assets/**/*', ['livereload'])
 })
 
+// By default, running 'gulp' will start the server, build everything
+// once, and then begin watching for changes
 gulp.task('default', ['connect', 'watch', 'sass'].concat(htmlTasks))

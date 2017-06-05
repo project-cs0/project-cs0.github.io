@@ -1,20 +1,19 @@
 {% extends './base.njk' %}
 
 {% block pageTitle %}
-Acknowledgements
+{{ metadata['acknowledgements']['page-title'] }}
 {% endblock %}
 
 {% block pageBody %}
-<h1>Acknowledgements</h1>
+<h1>{{ metadata['acknowledgements']['page-title'] }}</h1>
 
-<p>Hi there! This book makes use of the following awesome, open-source technologies:</p>
+<p>{{ metadata['acknowledgements']['intro'] }}</p>
 
 <ul>
+    {% for entry in metadata['acknowledgements']['acknowledgement-list'] %}
     <li>
-        <a href="#"><b>Nunjucks</b>: templating engine</a>
+        <a href="{{ entry.link }}"><b>{{ entry.name }}</b></a>: {{ entry.description }}
     </li>
-    <li>
-        <a href="#"><b>Prism.js</b>: syntax highlighting library</a>
-    </li>
+    {% endfor %}
 </ul>
 {% endblock %}

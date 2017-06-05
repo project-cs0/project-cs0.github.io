@@ -36,7 +36,7 @@
         "page-title": "Glossary",
         "out-file": "glossary.html",
         "link-title-format": "View definition of '{0}' in glossary",
-        "glossary-definitions": [
+        "definition-list": [
             {
                 "word": "JavaScript",
                 "definition": "A popular programming language. It is often used with HTML to make interactive websites."
@@ -46,7 +46,7 @@
     "acknowledgements": {
         "page-title": "Acknowledgements",
         "out-file": "acknowledgements.html",
-        "intro": "This book makes use of the following awesome, open-source projects and technologies:",
+        "intro": "This book makes use of the following amazing open-source projects and technologies:",
         "acknowledgement-list": [
             {
                 "name": "Nunjucks",
