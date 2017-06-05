@@ -3,11 +3,15 @@ const sass = require('gulp-sass')
 const connect = require('gulp-connect')
 const nunjucksRender = require('gulp-nunjucks-render')
 const rename = require('gulp-rename')
+const htmlBeautify = require('gulp-html-beautify')
 
 const languages = ['en']
 const pageNames = ['table-of-contents', 'glossary', 'acknowledgements']
 
 const htmlTasks = []
+const htmlBeautifyOptions = {
+    "preserve_newlines": false,
+}
 
 gulp.task('connect', () => {
     connect.server({
@@ -43,6 +47,7 @@ for (let language of languages) {
                         chapterMetadata: chapter,
                     }
                 }))
+                .pipe(htmlBeautify(htmlBeautifyOptions))
                 .pipe(rename(`/${language}/chapters/${chapter.number}/index.html`))
                 .pipe(gulp.dest('.'))
         })
@@ -61,6 +66,7 @@ for (let language of languages) {
                         metadata: metadata,
                     }
                 }))
+                .pipe(htmlBeautify(htmlBeautifyOptions))
                 .pipe(rename(`/${language}/${pageMetadata['out-file']}`))
                 .pipe(gulp.dest('.'))
         })
